@@ -1,0 +1,115 @@
+" General and GUI
+" ---------------
+
+" This to do with the system-wide configuration;
+" it must be first.
+set nocompatible
+
+" Set the command height to be 1 unit tall.
+set cmdheight=1
+
+" Enable line numbers.
+set number
+
+" Set 'hidden' which means it hides buffers instead
+" of closing them. Thus, you can open already opened
+" files and undo (provided buffer is still open).
+set hidden
+
+" Disable swap files.
+set nobackup
+set noswapfile
+
+
+" Highlighting
+" ------------
+
+" Enable syntax highlighting with a color scheme.
+"colorscheme wombat256mod
+syn on
+
+" Show matching parenthesis.
+set showmatch
+
+
+" Tabs and Spacing
+" ----------------
+
+" Auto and smart indentation. Optionally, return and
+" auto-indent once a certain number of characters is
+" reached.
+"set textwidth=120
+set autoindent
+set smartindent
+
+" Setup the tabs to be 4 spaces.
+set tabstop=4
+set softtabstop=4
+set expandtab
+set smarttab
+
+" Insert tabs according to shiftwidth, not tabstop.
+" Also, use multiple shift widths with '>' or '<'.
+set shiftwidth=4
+set shiftround
+set smarttab
+
+" For some file types, intelligently use different indenting.
+filetype plugin indent on
+
+
+" Searching
+" ---------
+
+" Enable searching for case-sensitive only when capital
+" letters are used; otherwise, it is case-insensitive.
+set ignorecase
+set smartcase
+
+" Setup searching so that it highlights search terms
+" as well as does it on-the-fly.
+set hlsearch
+set incsearch
+
+" Remember lots of commands and undo levels.
+set history=1000
+set undolevels=1000
+
+" Disable beeping.
+set novisualbell
+set noerrorbells
+
+
+" Keyboard and Mouse
+" ------------------
+
+" Disable the arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Remap : to ;. This saves time in the long run.
+nnoremap ; :
+
+" Remap up and down (k and j) to move over wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+" Use control+move to navigate multiple files.
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Allow backspace to work properly in all modes.
+set backspace=indent,eol,start
+
+" Enable the mouse for selecting text.
+set mouse=a
+set ttymouse=xterm2
+
+" All input interactions should be fast.
+set ttyfast
+
+

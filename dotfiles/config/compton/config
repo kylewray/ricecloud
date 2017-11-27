@@ -1,0 +1,37 @@
+# Enable shadows to be light and offset.
+shadow = true;
+
+# Disable DND window shadows.
+no-dnd-shadow = true;
+
+# Zero the shadow before drawing it to remove artifacts.
+clear-shadow = true;
+
+# Shadow should be light and slightly offset.
+shadow-radius = 5;
+shadow-offset-x = 3;
+shadow-offset-y = 3;
+shadow-opactiy = 0.25;
+
+
+# Fading is quick and smooth.
+fading = true;
+
+# There is a 25 millisecond gap between updates.
+fade-delta = 25;
+
+# Opacity changes at each step in and out at a rate of 0.10.
+# This implies 250 milliseconds to fade completely.
+fade-in-step = 0.10;
+fade-out-step = 0.10;
+
+
+# Avoid blur on background for transparent windows for performance.
+blur-background-fixed = false;
+
+# Paint on X Composite overlay window. Recommended for some reason.
+paint-on-overlay = true;
+
+# Throttle update rate, akin to vsync.
+sw-opti = true;
+

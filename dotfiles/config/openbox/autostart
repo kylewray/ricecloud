@@ -1,0 +1,15 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+killall -q compton dunst nitrogen polybar
+
+while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; done
+
+compton --config ~/.config/compton/config &
+nitrogen --restore &
+#dunst -config ~/.config/dunst/config &
+#polybar --config=~/.config/polybar/config &
+

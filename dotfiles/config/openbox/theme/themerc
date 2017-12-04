@@ -1,0 +1,102 @@
+!! Global Width
+border.width: 2
+padding.width: 7
+
+window.handle.width: 0
+
+window.client.padding.width: 4
+window.client.padding.height: 4
+
+window.active.border.color: #1a1c1e
+window.inactive.*.border.color: #1a1c1e
+
+window.frameColor: #1a1c1e
+window.*.client.color: #1a1c1e
+
+*.text.justify: left
+
+menu.border.color: #1a1c1e
+menu.overlap: 0
+
+!! Menu
+menu.items.bg: flat solid
+menu.items.bg.color: #537693
+menu.title.bg.colorTo: #8cafcc
+
+menu.items.active.bg: flat gradient split
+menu.items.active.bg.color: #8cafcc
+menu.items.active.bg.colorTo: #537693
+
+menu.items.text.color: #000000
+menu.items.disabled.text.color: #8cafcc
+menu.items.active.text.color: #537693
+
+!! Active Windows
+window.active.title.bg: flat gradient split
+window.active.title.bg.color: #8cafcc
+window.active.title.bg.colorTo: #8cafcc
+window.active.*.bg.border.color: #1a1c1e
+
+window.active.label.bg: parentrelative
+window.active.label.text.color: #8cafcc
+
+window.active.button.*.bg: parentrelative
+window.active.button.*.image.color: #537693
+window.active.*.bg.border.color: #1a1c1e
+
+window.active.button.pressed.bg.color: #537693
+window.active.button.pressed.bg.colorTo: #1a1c1e
+window.active.*.bg.border.color: #1a1c1e
+window.active.button.*.image.color: #537693
+
+window.active.button.hover.bg.color: #537693
+window.active.*.bg.border.color: #1a1c1e
+window.active.button.*.image.color: #537693
+
+window.active.button.disabled.bg: parentrelative
+window.active.button.*.image.color: #537693
+
+window.active.handle.bg:  flat solid
+window.active.handle.bg.color: #1a1c1e
+
+window.active.grip.bg:  flat solid 
+window.active.grip.bg.color: #1a1c1e
+
+!! Inactive Windows
+window.inactive.title.bg: flat gradient vertical
+window.inactive.title.bg.color: #537693
+window.inactive.title.bg.colorTo: #537693
+window.inactive.*.border.color: #1a1c1e
+
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #537693
+
+window.inactive.button.*.bg: parentrelative
+window.inactive.button.*.image.color: #8cafcc
+window.inactive.*.border.color: #1a1c1e
+
+window.inactive.button.pressed.bg.color: #8cafcc
+window.inactive.button.pressed.bg.colorTo: #1a1c1e
+window.inactive.*.border.color: #1a1c1e
+window.inactive.button.*.image.color: #8cafcc
+
+window.inactive.button.hover.bg.color: #8cafcc
+window.inactive.*.border.color: #1a1c1e
+window.inactive.button.*.image.color: #8cafcc
+
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.*.image.color: #8cafcc
+
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: #1a1c1e
+
+window.inactive.grip.bg: parentrelative
+window.inactive.grip.bg.color: #1a1c1e
+
+!! Fonts
+! Note: You can make shadowtint=75 instead of =0 below if you want text shadows.
+window.active.label.text.font: shadow=y:shadowoffset=1:shadowtint=0
+window.inactive.label.text.font: shadow=y:shadowoffset=1:shadowtint=0
+menu.items.font: 
+menu.title.text.font: shadow=y:shadowoffset=1:shadowtint=75
+

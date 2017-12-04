@@ -13,6 +13,11 @@ shadow-offset-x = 3;
 shadow-offset-y = 3;
 shadow-opactiy = 0.25;
 
+# Exclude the polybar from the shadow.
+shadow-exclude = [
+    "class_g = 'Polybar'"
+];
+
 
 # Fading is quick and smooth.
 fading = true;

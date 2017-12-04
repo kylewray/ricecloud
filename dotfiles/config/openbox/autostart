@@ -8,8 +8,8 @@ killall -q compton dunst nitrogen polybar
 
 while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; done
 
-compton --config ~/.config/compton/config &
+compton --config ~/.config/compton/config --respect-prop-shadow &
 nitrogen --restore &
-#dunst -config ~/.config/dunst/config &
-#polybar --config=~/.config/polybar/config &
+dunst -config ~/.config/dunst/config &
+polybar ricecloud &
 

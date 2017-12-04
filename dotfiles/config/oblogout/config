@@ -1,0 +1,24 @@
+[settings]
+usehal = false
+
+[looks]
+opacity = 95
+bgcolor = black
+buttontheme = ricecloud
+buttons = cancel, lock, logout, suspend, restart, shutdown
+
+[shortcuts]
+cancel = Escape
+shutdown = S
+restart = R
+suspend = U
+logout = L
+lock = K
+
+[commands]
+shutdown = systemctl poweroff
+restart = systemctl reboot
+suspend = systemctl suspend
+logout = openbox --exit
+lock = termite
+

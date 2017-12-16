@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # font
-export RICECLOUD_FONT="Source Sans Pro 12"
+export RICECLOUD_GUI_FONT="Source Sans Pro"
+export RICECLOUD_GUI_FONT_SIZE="14"
+export RICECLOUD_TERMINAL_FONT="Source Code Pro"
+export RICECLOUD_TERMINAL_FONT_SIZE="12"
 
 # opacity/transparency
 export RICECLOUD_COLOR_OPACITY=100
@@ -54,6 +57,7 @@ export RICECLOUD_COLOR_WARNING=$RICECLOUD_COLOR_9
 # vim -- uses terminal color scheme
 
 # termite
+sed -i -e "s/font=.*/font=${RICECLOUD_TERMINAL_FONT} ${RICECLOUD_TERMINAL_FONT_SIZE}/g" dotfiles/config/termite/config
 sed -i -e "s/foreground .*/foreground = ${RICECLOUD_COLOR_FOREGROUND}/g" dotfiles/config/termite/config
 sed -i -e "s/foreground_bold .*/foreground_bold = ${RICECLOUD_COLOR_FOREGROUND}/g" dotfiles/config/termite/config
 sed -i -e "s/cursor .*/cursor = ${RICECLOUD_COLOR_FOREGROUND}/g" dotfiles/config/termite/config
@@ -159,7 +163,7 @@ ROFI_FOREGROUND=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_HIGHLIG
 ROFI_NORMAL=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_TEXT"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s".format(opacity, 2) % (color))'`
 ROFI_ACTIVE=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_ACCENT"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s".format(opacity, 2) % (color))'`
 ROFI_URGENT=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_WARNING"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s".format(opacity, 2) % (color))'`
-sed -i -e "s/rofi.font:.*/rofi.font: ${RICECLOUD_FONT}/g" dotfiles/config/rofi/config
+sed -i -e "s/rofi.font:.*/rofi.font: ${RICECLOUD_GUI_FONT} ${RICECLOUD_GUI_FONT_SIZE}/g" dotfiles/config/rofi/config
 sed -i -e "s/rofi.color-window:.*/rofi.color-window: ${ROFI_BACKGROUND}, ${ROFI_BACKGROUND}, ${ROFI_BACKGROUND}/g" dotfiles/config/rofi/config
 sed -i -e "s/rofi.color-normal:.*/rofi.color-normal: ${ROFI_BACKGROUND}, ${ROFI_NORMAL}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" dotfiles/config/rofi/config
 sed -i -e "s/rofi.color-active:.*/rofi.color-active: ${ROFI_BACKGROUND}, ${ROFI_ACTIVE}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" dotfiles/config/rofi/config
@@ -171,7 +175,9 @@ sed -i -e "s/opacity .*/opacity = ${RICECLOUD_COLOR_OPACITY}/g" dotfiles/config/
 sed -i -e "s/bgcolor .*/bgcolor = black/g" dotfiles/config/oblogout/config
 
 # polybar
-sed -i -e "s/ricecloud-background .*/ricecloud-background = #00000000/g" dotfiles/config/polybar/config
+sed -i -e "s/font-0 = .*/font-0 = ${RICECLOUD_GUI_FONT}:pixelsize=${RICECLOUD_GUI_FONT_SIZE}\;0/g" dotfiles/config/polybar/config
+sed -i -e "s/font-1 = .*/font-1 = FontAwesome:pixelsize=${RICECLOUD_GUI_FONT_SIZE}\;0/g" dotfiles/config/polybar/config
+sed -i -e "s/ricecloud-background .*/ricecloud-background = #01000000/g" dotfiles/config/polybar/config
 sed -i -e "s/ricecloud-foreground .*/ricecloud-foreground = ${RICECLOUD_COLOR_FOREGROUND}/g" dotfiles/config/polybar/config
 sed -i -e "s/ricecloud-text .*/ricecloud-text = ${RICECLOUD_COLOR_TEXT}/g" dotfiles/config/polybar/config
 sed -i -e "s/ricecloud-highlight .*/ricecloud-highlight = ${RICECLOUD_COLOR_HIGHLIGHT}/g" dotfiles/config/polybar/config
@@ -179,7 +185,7 @@ sed -i -e "s/ricecloud-accent .*/ricecloud-accent = ${RICECLOUD_COLOR_ACCENT}/g"
 sed -i -e "s/ricecloud-warning .*/ricecloud-warning = ${RICECLOUD_COLOR_WARNING}/g" dotfiles/config/polybar/config
 
 # dunst
-sed -i -e "s/font = .*/font = ${RICECLOUD_FONT}/g" dotfiles/config/dunst/config
+sed -i -e "s/font = .*/font = ${RICECLOUD_GUI_FONT} ${RICECLOUD_GUI_FONT_SIZE}/g" dotfiles/config/dunst/config
 sed -i -e "s/transparency = .*/transparency = ${RICECLOUD_COLOR_TRANSPARENCY}/g" dotfiles/config/dunst/config
 sed -i -e "s/frame_color = .*/frame_color = \"${RICECLOUD_COLOR_0}\"/g" dotfiles/config/dunst/config
 sed -i -e "s/separator_color = .*/separator_color = \"${RICECLOUD_COLOR_0}\"/g" dotfiles/config/dunst/config

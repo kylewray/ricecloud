@@ -1,5 +1,7 @@
 [colors]
-ricecloud-background = #00000000
+; Note: Alpha is bugged for some icons unless I give it a
+; little opacity... Hence the "#01..." below.
+ricecloud-background = #01000000
 ricecloud-foreground = #ccced1
 ricecloud-text = #ccced1
 ricecloud-highlight = #c2cc68
@@ -34,10 +36,8 @@ module-margin-right = 2
 padding-left = 1
 padding-right = 2
 
-font-0 = Source Code Pro:pixelsize=12;0
-font-1 = Nerd Patched Fonts:pixelsize=12;0
-font-2 = FontAwesome:pixelsize=12;0
-font-3 = fixed:pixelsize=12;1
+font-0 = Source Sans Pro:pixelsize=14;0
+font-1 = FontAwesome:pixelsize=14;0
 
 scroll-up = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf + 1)
 scroll-down = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf - 1)

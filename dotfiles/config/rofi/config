@@ -10,7 +10,7 @@ rofi.separator-style: none
 !rofi.dpi: 180
 
 ! Rofi Color Scheme
-rofi.font: Source Sans Pro 12
+rofi.font: Source Sans Pro 14
 rofi.color-enabled: true
 rofi.color-window: #fe1a1c1e, #fe1a1c1e, #fe1a1c1e
 rofi.color-normal: #fe1a1c1e, #feccced1, #fe1a1c1e, #fec2cc68, #fe1a1c1e

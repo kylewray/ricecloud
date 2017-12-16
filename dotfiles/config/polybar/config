@@ -1,120 +1,115 @@
 [colors]
-background = #00000000
-foreground = ${xrdb:color7:#ffffff}
-text = #ffffff
-highlight = ${xrdb:color8:#ffffff}
-accent = ${xrdb:color10:#119911}
-warning = ${xrdb:color9:#991111}
+ricecloud-background = #00000000
+ricecloud-foreground = #ccced1
+ricecloud-text = #ccced1
+ricecloud-highlight = #c2cc68
+ricecloud-accent = #8cafcc
+ricecloud-warning = #db6f6f
 
 
 [bar/ricecloud]
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.ricecloud-background}
+foreground = ${colors.ricecloud-foreground}
 
 width = 100%
-height = 24
-fixed-center = false
+height = 30
+fixed-center = true
 
-modules-left = openbox
+modules-left = workspaces
 modules-center = date
-modules-right = volume backlight battery wlan
+modules-right = cpu memory volume backlight wlan battery
 
 ;modules-left = mpd
-;modules-right = cpu temperature memory filesystem eth 
+;modules-right = filesystem temperature eth 
 
-line-size = 4
-line-color = $
+line-size = 3
+line-color = ${colors.ricecloud-highlight}
 
-border-top-size = 6
-border-bottom-size = 6
-border-color = ${colors.foreground}
+border-size = 6
+border-color = ${colors.ricecloud-background}
 
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+padding-left = 1
+padding-right = 2
 
-scroll-up = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf - 1)
-scroll-down = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf + 1)
+font-0 = Source Code Pro:pixelsize=12;0
+font-1 = Nerd Patched Fonts:pixelsize=12;0
+font-2 = FontAwesome:pixelsize=12;0
+font-3 = fixed:pixelsize=12;1
 
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background}
-label-focused-underline= ${colors.highlight}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+scroll-up = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf + 1)
+scroll-down = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf - 1)
 
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+[module/workspaces]
+type = internal/xworkspaces
 
-label-mode-padding = 2
-label-mode-foreground = ${colors.foreground-alt}
-label-mode-background = ${colors.highlight}
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
 
-label-focused = F %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+; Note: The desktop name needs to match the name from openbox.
+icon-0 = terminal;
+icon-1 = code;
+icon-2 = internet;
+icon-3 = email;
+icon-4 = misc;
+icon-default = 
 
-label-unfocused = U %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+; Available tokens for <label-*> below: %name% %icon% %index%
 
-label-visible = V %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-background}
-label-visible-padding = ${self.label-focused-padding}
+label-active = " %icon% "
+label-active-foreground = ${colors.ricecloud-text}
+label-active-background = ${colors.ricecloud-background}
+label-active-underline = ${colors.ricecloud-accent}
 
-label-urgent = %index%!
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-occupied = " %icon% "
+label-occupied-foreground = ${colors.ricecloud-text}
+label-occupied-background = ${colors.ricecloud-background}
+label-occupied-underline = ${colors.ricecloud-highlight}
+
+label-urgent = " %icon% "
+label-urgent-foreground = ${colors.ricecloud-text}
+label-urgent-background = ${colors.ricecloud-background}
+label-urgent-underline = ${colors.ricecloud-warning}
+
+label-empty = " %icon% "
+label-empty-foreground = ${colors.ricecloud-text}
+label-empty-background = ${colors.ricecloud-background}
+label-empty-underline = ${colors.ricecloud-background}
 
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = "%a, %b %d %Y"
+date = "%a %b %d %Y"
 time = %l:%M %p
 
-format-prefix = 
-format-prefix-foreground = ${colors.text}
-format-underline = ${colors.foreground}
+format-underline = ${colors.ricecloud-accent}
 
-label = %date% %time%
+label = " %date%  %time%"
 
 
 [module/volume]
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
+format-volume-foreground = ${colors.ricecloud-foreground}
+format-volume-underline = ${colors.ricecloud-accent}
+
 label-volume = %percentage%%
-label-volume-foreground = ${root.text}
+label-volume-foreground = ${colors.ricecloud-foreground}
 
-label-muted = 🔇
-label-muted-foreground = ${colors.highlight}
+label-muted =  0%
+label-muted-foreground = ${colors.ricecloud-foreground}
+label-muted-underline = ${colors.ricecloud-highlight}
 
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
@@ -124,14 +119,11 @@ ramp-headphones-1 = 
 type = internal/xbacklight
 card = intel_backlight
 
-format = <ramp> <label>
-label = %percentage%%
+format-prefix = 
+format-prefix-foreground = ${colors.ricecloud-foreground}
+format-underline = ${colors.ricecloud-accent}
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+label = %percentage%%
 
 
 [module/battery]
@@ -141,34 +133,109 @@ adapter = ADP1
 full-at = 97
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.accent}
+format-charging-underline = ${colors.ricecloud-highlight}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.ricecloud-warning}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.text}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix =  
+format-full-prefix-foreground = ${colors.ricecloud-foreground}
+format-full-underline = ${colors.ricecloud-accent}
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = 100%
 
-; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-; Only applies if <animation-charging> is used
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
-animation-capacity-foreground = ${colors.text}
+animation-capacity-foreground = ${colors.ricecloud-foreground}
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.ricecloud-foreground}
+format-underline = ${colors.ricecloud-accent}
+label = %percentage%%
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+format-prefix = " "
+format-prefix-foreground = ${colors.ricecloud-foreground}
+
+format-underline = ${colors.ricecloud-accent}
+
+label = %percentage_used%%
+
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 5.0
+
+format-connected =  <label-connected>
+format-connected-underline = ${colors.ricecloud-accent}
+label-connected = %essid%
+
+format-disconnected =  <label-disconnected>
+format-disconnected-underline = ${colors.ricecloud-warning}
+label-disconnected = %ifname%
+label-disconnected-foreground = ${colors.ricecloud-foreground}
+
+
+[module/filesystem]
+type = internal/fs
+interval = 30
+fixed-values = true
+spacing = 4
+
+mount-0 = /
+mount-1 = /home
+mount-2 = /home/winter/research
+mount-3 = /home/winter/development
+mount-4 = /home/winter/media
+mount-5 = /home/winter/games
+
+label-mounted = %mountpoint%: %percentage_used%%
+
+format-unmounted = <label-unmounted>
+format-unmounted-underline = ${colors.ricecloud-warning}
+label-unmounted = %mountpoint%
+label-unmounted-foreground = ${colors.ricecloud-foreground}
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = ${colors.ricecloud-accent}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.ricecloud-foreground}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.ricecloud-foreground}
 
 
 [module/mpd]
@@ -185,105 +252,11 @@ label-song-maxlen = 25
 label-song-ellipsis = true
 
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.text}
-format-underline = ${colors.accent}
-label = %percentage%%
-
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.text}
-format-underline = ${colors.accent}
-label = %percentage_used%%
-
-
-[module/filesystem]
-type = internal/fs
-interval = 60
-
-mount-0 = /
-mount-1 = /home
-mount-2 = /home/winter/research
-mount-3 = /home/winter/development
-mount-4 = /home/winter/media
-mount-5 = /home/winter/games
-
-label-mounted = %{F${colors.highlight}}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = Warning: %mountpoint% not mounted
-label-unmounted-foreground = ${colors.text}
-
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.accent}
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.text}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.text}
-
-
-[module/eth]
-type = internal/network
-interface = net0
-interval = 3.0
-
-format-connected-underline = ${colors.accent}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.text}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.text}
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = ${colors.accent}
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.alert}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.text}
-
-
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
+;compositing-background = ${colors.ricecloud-background}
+;compositing-background = ${colors.ricecloud-background}
+;compositing-foreground = ${colors.ricecloud-foreground}
 ;compositing-border = over
 
 

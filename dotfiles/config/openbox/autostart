@@ -4,10 +4,17 @@
 # to run user-specific things.
 #
 
+# Disable the Display Power Management Signaling entirely. This
+# means the screen will not blank ever.
+xset -dpms s off
+
+# Kill all the background programs, incase we logout or something
+# and they may still be running from a previous session.
 killall -q compton dunst nitrogen polybar
 
 while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; done
 
+# Run all background programs.
 compton --config ~/.config/compton/config --respect-prop-shadow &
 nitrogen --restore &
 dunst -config ~/.config/dunst/config &

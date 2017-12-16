@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export RICECLOUD_ROOT=$HOME/development/ricecloud/dotfiles/
+export RICECLOUD_ROOT=$HOME/development/ricecloud/dotfiles
 export RICECLOUD_CONFIG=$RICECLOUD_ROOT/config
 
 ln -s $RICECLOUD_ROOT/vimrc $HOME/.vimrc

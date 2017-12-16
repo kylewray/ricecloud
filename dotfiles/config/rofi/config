@@ -12,13 +12,10 @@ rofi.separator-style: none
 ! Rofi Color Scheme
 rofi.font: Source Sans Pro 12
 rofi.color-enabled: true
-rofi.color-window: #111111, #111111
-rofi.color-normal: #111111, #8b7e7e, #111111, #111111, #f0f5f8
-rofi.color-active: #111111, #e00006, #111111, #111111, #f0f5f8
-rofi.color-urgent: #111111, #ffee1e, #111111, #111111, #f0f5f8
-
-! Note: Opacity should also match oblogout opacity.
-rofi.opacity: 95
+rofi.color-window: #fe1a1c1e, #fe1a1c1e, #fe1a1c1e
+rofi.color-normal: #fe1a1c1e, #feccced1, #fe1a1c1e, #fec2cc68, #fe1a1c1e
+rofi.color-active: #fe1a1c1e, #fe8cafcc, #fe1a1c1e, #fec2cc68, #fe1a1c1e
+rofi.color-urgent: #fe1a1c1e, #fedb6f6f, #fe1a1c1e, #fec2cc68, #fe1a1c1e
 
 ! Rofi Key Bindings
 rofi.kb-primary-paste:               Control+v

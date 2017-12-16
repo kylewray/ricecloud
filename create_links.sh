@@ -49,3 +49,6 @@ ln -s $RICECLOUD_CONFIG/termite/config $HOME/.config/termite/config
 mkdir $HOME/.config/gtk-3.0
 ln -s $RICECLOUD_CONFIG/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css
 
+mkdir $HOME/.config/cava
+ln -s $RICECLOUD_CONFIG/cava/config $HOME/.config/cava/config
+

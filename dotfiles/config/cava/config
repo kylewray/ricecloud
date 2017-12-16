@@ -1,0 +1,27 @@
+[general]
+
+mode = normal
+framerate = 60
+
+
+[input]
+
+method = pulse
+source = auto
+
+
+[color]
+
+background = '#1a1c1e'
+foreground = '#ccced1'
+
+gradient = 1
+gradient_color_1 = '#8cafcc'
+gradient_color_2 = '#ccced1'
+
+
+[smoothing]
+
+integral = 80
+gravity = 200
+

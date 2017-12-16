@@ -4,8 +4,8 @@
 export RICECLOUD_FONT="Source Sans Pro 12"
 
 # opacity/transparency
-export RICECLOUD_COLOR_OPACITY=90
-export RICECLOUD_COLOR_TRANSPARENCY=10
+export RICECLOUD_COLOR_OPACITY=100
+export RICECLOUD_COLOR_TRANSPARENCY=0
 
 # background/foreground
 export RICECLOUD_COLOR_FOREGROUND=#ccced1
@@ -186,4 +186,10 @@ sed -i -e "s/separator_color = .*/separator_color = \"${RICECLOUD_COLOR_0}\"/g" 
 sed -i -e "/\[urgency_low\]/{n;s/background = .*/background = \"${RICECLOUD_COLOR_BACKGROUND}\"/g;n;s/foreground = .*/foreground = \"${RICECLOUD_COLOR_ACCENT}\"/g}" dotfiles/config/dunst/config
 sed -i -e "/\[urgency_normal\]/{n;s/background = .*/background = \"${RICECLOUD_COLOR_BACKGROUND}\"/g;n;s/foreground = .*/foreground = \"${RICECLOUD_COLOR_TEXT}\"/g}" dotfiles/config/dunst/config
 sed -i -e "/\[urgency_critical\]/{n;s/background = .*/background = \"${RICECLOUD_COLOR_BACKGROUND}\"/g;n;s/foreground = .*/foreground = \"${RICECLOUD_COLOR_WARNING}\"/g}" dotfiles/config/dunst/config
+
+# cava
+sed -i -e "s/background = .*/background = '${RICECLOUD_COLOR_BACKGROUND}'/g" dotfiles/config/cava/config
+sed -i -e "s/gradient_color_1 = .*/gradient_color_1 = '${RICECLOUD_COLOR_ACCENT}'/g" dotfiles/config/cava/config
+sed -i -e "s/gradient_color_2 = .*/gradient_color_2 = '${RICECLOUD_COLOR_TEXT}'/g" dotfiles/config/cava/config
+
 

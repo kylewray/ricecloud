@@ -176,56 +176,8 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-    <chainQuitKey>C-g</chainQuitKey>
+    <!--chainQuitKey>C-g</chainQuitKey-->
     <!-- Keybindings for desktop switching -->
-    <keybind key="W-h">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-l">
-      <action name="GoToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-k">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-j">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-h">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-l">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-k">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-j">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -251,6 +203,31 @@
         <to>5</to>
       </action>
     </keybind>
+    <!--keybind key="W-h">
+      <action name="GoToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-l">
+      <action name="GoToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-k">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-j">
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind-->
+    <!-- Keybindings for sending to desktops -->
     <keybind key="W-S-1">
       <action name="SendToDesktop">
         <to>1</to>
@@ -276,12 +253,101 @@
         <to>5</to>
       </action>
     </keybind>
+    <!--keybind key="W-S-h">
+      <action name="SendToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-l">
+      <action name="SendToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="SendToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="SendToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind-->
+    <!-- Keybindings for window moving and resizing -->
+    <keybind key="W-S-h">
+      <action name="MoveResizeTo">
+        <x>8</x>
+        <y>1</y>
+        <width>944</width>
+        <height>1024</height>
+      </action>
+      <!--action name="GrowToEdge">
+        <direction>south</direction>
+      </action>
+      <action name="ResizeRelative">
+        <bottom>-10</bottom>
+      </action-->
+    </keybind>
+    <keybind key="W-S-l">
+      <action name="MoveResizeTo">
+        <x>-8</x>
+        <y>1</y>
+        <width>944</width>
+        <height>1024</height>
+      </action>
+      <!--action name="GrowToEdge">
+        <direction>south</direction>
+      </action>
+      <action name="ResizeRelative">
+        <bottom>-10</bottom>
+      </action-->
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>1</y>
+        <width>944</width>
+        <height>1024</height>
+      </action>
+      <!--action name="GrowToEdge">
+        <direction>south</direction>
+      </action>
+      <action name="ResizeRelative">
+        <bottom>-10</bottom>
+      </action-->
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="MoveResizeTo">
+        <y>1</y>
+        <width>944</width>
+        <height>508</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="MoveResizeTo">
+        <y>-8</y>
+        <width>944</width>
+        <height>508</height>
+      </action>
+    </keybind>
+    <!-- Keybindings for basic behavior -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <!-- Keybindings for windows -->
     <keybind key="W-S-q">
       <action name="Close"/>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-S-m">
+      <action name="ToggleMaximize">
+        <direction>vertical</direction>
+      </action>
     </keybind>
     <!--keybind key="W-Escape">
       <action name="Lower"/>
@@ -297,7 +363,7 @@
       <action name="Reconfigure"/>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="W-Tab">
+    <!--keybind key="W-Tab">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
@@ -314,7 +380,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind>
+    </keybind-->
     <!--keybind key="W-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
@@ -326,23 +392,23 @@
         </finalactions>
       </action>
     </keybind-->
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-A-h">
+    <!-- Keybindings for window switching with the direction keys -->
+    <keybind key="W-h">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-A-l">
+    <keybind key="W-l">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="W-A-k">
+    <keybind key="W-k">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="W-A-j">
+    <keybind key="W-j">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
@@ -431,68 +497,48 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
+      <mousebind button="W-Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind button="A-Left" action="Click">
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
-      <mousebind button="A-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
+      <mousebind button="W-Middle" action="Press">
+        <action name="ToggleShade"/>
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
-      </mousebind>
-      <mousebind button="A-Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Up" action="Click">
-        <action name="SendToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-S-Down" action="Click">
-        <action name="SendToDesktop">
-          <to>next</to>
-        </action>
       </mousebind>
     </context>
     <context name="Titlebar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="if">
+          <query>
+            <maximizedvertical>yes</maximizedvertical>
+            <maximizedhorizontal>no</maximizedhorizontal>
+          </query>
+          <then>
+            <action name="ToggleMaximize">
+              <direction>vertical</direction>
+            </action>
+          </then>
+          <else>
+            <action name="ToggleMaximize"/>
+          </else>
+        </action>
       </mousebind>
-      <mousebind button="Up" action="Click">
+      <!--mousebind button="Middle" action="Click">
+        <action name="ToggleShade"/>
+      </mousebind-->
+      <!--mousebind button="Up" action="Click">
         <action name="if">
           <shaded>no</shaded>
           <then>
@@ -511,32 +557,36 @@
             <action name="Raise"/>
           </then>
         </action>
-      </mousebind>
+      </mousebind-->
     </context>
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
-      <mousebind button="Middle" action="Press">
-        <!--action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/-->
+      <!--mousebind button="Left" action="Drag">
+        <action name="Move"/>
+      </mousebind-->
+      <!--mousebind button="Middle" action="Press">
         <action name="ToggleShade"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
+      </mousebind-->
+      <!--mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <!--action name="ShowMenu">
+        <action name="ShowMenu">
           <menu>client-menu</menu>
-        </action-->
-      </mousebind>
+        </action>
+      </mousebind-->
     </context>
     <context name="Top">
       <mousebind button="Left" action="Drag">
         <action name="Resize">
           <edge>top</edge>
+        </action>
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize">
+          <direction>vertical</direction>
         </action>
       </mousebind>
     </context>
@@ -546,11 +596,21 @@
           <edge>left</edge>
         </action>
       </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize">
+          <direction>horizontal</direction>
+        </action>
+      </mousebind>
     </context>
     <context name="Right">
       <mousebind button="Left" action="Drag">
         <action name="Resize">
           <edge>right</edge>
+        </action>
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize">
+          <direction>horizontal</direction>
         </action>
       </mousebind>
     </context>
@@ -560,22 +620,31 @@
           <edge>bottom</edge>
         </action>
       </mousebind>
-      <mousebind button="Right" action="Press">
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize">
+          <direction>vertical</direction>
+        </action>
+      </mousebind>
+      <!--mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <!--action name="ShowMenu">
+        <action name="ShowMenu">
           <menu>client-menu</menu>
-        </action-->
-      </mousebind>
+        </action>
+      </mousebind-->
     </context>
     <context name="TRCorner BRCorner TLCorner BLCorner">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Resize"/>
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize">
+          <direction>vertical</direction>
+        </action>
       </mousebind>
     </context>
     <context name="Client">
@@ -592,28 +661,27 @@
         <action name="Raise"/>
       </mousebind>
     </context>
-    <context name="Icon">
+    <!--context name="Icon">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
-        <!--action name="ShowMenu">
+        <action name="ShowMenu">
           <menu>client-menu</menu>
-        </action-->
+        </action>
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <!--action name="ShowMenu">
+        <action name="ShowMenu">
           <menu>client-menu</menu>
-        </action-->
+        </action>
       </mousebind>
-    </context>
+    </context-->
     <context name="AllDesktops">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Click">
         <action name="ToggleOmnipresent"/>
@@ -641,17 +709,14 @@
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Middle" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Click">
         <action name="ToggleMaximize"/>
@@ -671,7 +736,6 @@
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Click">
         <action name="Close"/>
@@ -731,7 +795,7 @@
         </action>
       </mousebind>
     </context-->
-    <context name="MoveResize">
+    <!--context name="MoveResize">
       <mousebind button="Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -752,7 +816,7 @@
           <to>next</to>
         </action>
       </mousebind>
-    </context>
+    </context-->
   </mouse>
   <menu>
     <!-- You can specify more than one menu file in here and they are all loaded,

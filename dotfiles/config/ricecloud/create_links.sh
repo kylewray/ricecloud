@@ -11,6 +11,12 @@ mkdir $HOME/.themes/ricecloud
 ln -s $RICECLOUD_CONFIG/openbox/theme $HOME/.themes/ricecloud/openbox-3
 ln -s $RICECLOUD_CONFIG/oblogout/theme $HOME/.themes/ricecloud/oblogout
 
+mkdir $HOME/.config/ricecloud
+ln -s $RICECLOUD_CONFIG/ricecloud/config $HOME/.config/ricecloud/config
+ln -s $RICECLOUD_CONFIG/ricecloud/update_resolution.sh $HOME/.config/ricecloud/update_resolution.sh
+ln -s $RICECLOUD_CONFIG/ricecloud/update_resolution.py $HOME/.config/ricecloud/update_resolution.py
+chmod +x $HOME/.config/ricecloud/update_resolution.sh
+
 mkdir $HOME/.config/openbox
 ln -s $RICECLOUD_CONFIG/openbox/autostart $HOME/.config/openbox/autostart
 ln -s $RICECLOUD_CONFIG/openbox/environment $HOME/.config/openbox/environment

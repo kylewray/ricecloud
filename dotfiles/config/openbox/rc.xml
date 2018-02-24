@@ -280,58 +280,70 @@
     <!-- Keybindings for window moving and resizing -->
     <keybind key="W-S-h">
       <action name="MoveResizeTo">
-        <x>8</x>
-        <y>1</y>
-        <width>944</width>
-        <height>1024</height>
+        <x>1%</x>
+        <y>2%</y>
+        <width>485/1000%</width>
+        <height>96/100</height>
       </action>
-      <!--action name="GrowToEdge">
-        <direction>south</direction>
-      </action>
-      <action name="ResizeRelative">
-        <bottom>-10</bottom>
-      </action-->
     </keybind>
     <keybind key="W-S-l">
       <action name="MoveResizeTo">
-        <x>-8</x>
-        <y>1</y>
-        <width>944</width>
-        <height>1024</height>
+        <x>-1%</x>
+        <y>2%</y>
+        <width>485/1000</width>
+        <height>96/100</height>
       </action>
-      <!--action name="GrowToEdge">
-        <direction>south</direction>
-      </action>
-      <action name="ResizeRelative">
-        <bottom>-10</bottom>
-      </action-->
-    </keybind>
-    <keybind key="W-S-c">
-      <action name="MoveResizeTo">
-        <x>center</x>
-        <y>1</y>
-        <width>944</width>
-        <height>1024</height>
-      </action>
-      <!--action name="GrowToEdge">
-        <direction>south</direction>
-      </action>
-      <action name="ResizeRelative">
-        <bottom>-10</bottom>
-      </action-->
     </keybind>
     <keybind key="W-S-k">
       <action name="MoveResizeTo">
-        <y>1</y>
-        <width>944</width>
-        <height>508</height>
+        <y>2%</y>
+        <width>485/1000</width>
+        <height>47/100</height>
       </action>
     </keybind>
     <keybind key="W-S-j">
       <action name="MoveResizeTo">
-        <y>-8</y>
-        <width>944</width>
-        <height>508</height>
+        <y>-2%</y>
+        <width>485/1000</width>
+        <height>47/100</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-A-h">
+      <action name="MoveResizeTo">
+        <x>11/1000</x>
+        <y>2%</y>
+        <width>3165/10000</width>
+        <height>96/100</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-A-l">
+      <action name="MoveResizeTo">
+        <x>-11/1000</x>
+        <y>2%</y>
+        <width>3165/10000</width>
+        <height>96/100</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-A-k">
+      <action name="MoveResizeTo">
+        <y>2%</y>
+        <width>3165/10000</width>
+        <height>47/100</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-A-j">
+      <action name="MoveResizeTo">
+        <y>-2%</y>
+        <width>3165/10000</width>
+        <height>47/100</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-A-c">
+      <action name="MoveResizeTo">
+        <x>34125/100000</x>
+        <y>2%</y>
+        <width>3165/10000</width>
+        <height>96/100</height>
       </action>
     </keybind>
     <!-- Keybindings for basic behavior -->
@@ -362,8 +374,17 @@
     <keybind key="W-C-A-S-r">
       <action name="Reconfigure"/>
     </keybind>
+    <keybind key="W-C-A-S-d">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>update_resolution</name>
+        </startupnotify>
+        <command>python ~/.config/ricecloud/update_resolution.py</command>
+      </action>
+    </keybind>
     <!-- Keybindings for window switching -->
-    <!--keybind key="W-Tab">
+    <keybind key="W-Tab">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
@@ -380,7 +401,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind-->
+    </keybind>
     <!--keybind key="W-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>

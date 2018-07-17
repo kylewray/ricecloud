@@ -121,11 +121,11 @@
     <number>5</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>terminal</name>
-      <name>code</name>
-      <name>internet</name>
-      <name>email</name>
-      <name>misc</name>
+      <name>one</name>
+      <name>two</name>
+      <name>three</name>
+      <name>four</name>
+      <name>five</name>
     </names>
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -282,7 +282,7 @@
       <action name="MoveResizeTo">
         <x>1%</x>
         <y>2%</y>
-        <width>485/1000%</width>
+        <width>485/1000</width>
         <height>96/100</height>
       </action>
     </keybind>
@@ -481,9 +481,11 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>termite</name>
+          <name>io.elementary.terminal</name>
+          <!--name>termite</name-->
         </startupnotify>
-        <command>termite</command>
+        <!--command>termite</command-->
+        <command>io.elementary.terminal</command>
       </action>
     </keybind>
     <keybind key="W-space">

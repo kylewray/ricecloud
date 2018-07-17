@@ -5,7 +5,7 @@ enabled=eDP-1
 disabled=DP-1
 width=1920
 height=1080
-refreshrate=60.0
+refreshrate=60.02
 
 [home]
 numdisplays=2

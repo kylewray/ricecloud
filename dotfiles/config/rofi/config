@@ -12,10 +12,10 @@ rofi.separator-style: none
 ! Rofi Color Scheme
 rofi.font: Source Sans Pro 14
 rofi.color-enabled: true
-rofi.color-window: #fe1a1c1e, #fe1a1c1e, #fe1a1c1e
-rofi.color-normal: #fe1a1c1e, #feccced1, #fe1a1c1e, #fec2cc68, #fe1a1c1e
-rofi.color-active: #fe1a1c1e, #fe8cafcc, #fe1a1c1e, #fec2cc68, #fe1a1c1e
-rofi.color-urgent: #fe1a1c1e, #fedb6f6f, #fe1a1c1e, #fec2cc68, #fe1a1c1e
+rofi.color-window: #fe1e1c1a, #fe1e1c1a, #fe1e1c1a
+rofi.color-normal: #fe1e1c1a, #fed1cecc, #fe1e1c1a, #fe68ccc2, #fe1e1c1a
+rofi.color-active: #fe1e1c1a, #feccaf8c, #fe1e1c1a, #fe68ccc2, #fe1e1c1a
+rofi.color-urgent: #fe1e1c1a, #fe6f6fdb, #fe1e1c1a, #fe68ccc2, #fe1e1c1a
 
 ! Rofi Key Bindings
 rofi.kb-primary-paste:               Control+v

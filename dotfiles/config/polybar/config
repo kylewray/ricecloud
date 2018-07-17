@@ -1,7 +1,7 @@
 [colors]
 ; Note: Alpha is bugged for some icons unless I give it a
 ; little opacity... Hence the "#01..." below.
-ricecloud-background = #01000000
+ricecloud-background = #fe1a1c1e
 ricecloud-foreground = #ccced1
 ricecloud-text = #ccced1
 ricecloud-highlight = #c2cc68
@@ -38,6 +38,7 @@ padding-right = 2
 
 font-0 = Source Sans Pro:pixelsize=14;0
 font-1 = FontAwesome:pixelsize=14;0
+;font-2 = Noto Sans Arabic:pixelsize=14;0
 
 scroll-up = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf + 1)
 scroll-down = wmctrl -s $(read asdf <<< $(wmctrl -d | grep "*" | awk '{print $1}'); expr $asdf - 1)
@@ -51,11 +52,16 @@ enable-click = true
 enable-scroll = true
 
 ; Note: The desktop name needs to match the name from openbox.
-icon-0 = terminal;
-icon-1 = code;
-icon-2 = internet;
-icon-3 = email;
-icon-4 = misc;
+icon-0 = one;
+icon-1 = two;
+icon-2 = three;
+icon-3 = four;
+icon-4 = five;
+;icon-0 = one;١
+;icon-1 = two;۲
+;icon-2 = three;۳
+;icon-3 = four;۴
+;icon-4 = five;۵
 icon-default = 
 
 ; Available tokens for <label-*> below: %name% %icon% %index%

@@ -10,7 +10,7 @@ killall polybar
 nitrogen --restore
 
 # After all updates, we pause a second to let everything close and update.
-sleep 1
+sleep 2
 
 # Note: "&" launches a child process, and "setsid" detaches it from the controlling
 # tty. Then "(...)" in bash starts a grandchild process. When the child process dies,

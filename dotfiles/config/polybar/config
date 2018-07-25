@@ -136,7 +136,7 @@ label = %percentage%%
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 97
+full-at = 95
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.ricecloud-highlight}
@@ -170,10 +170,24 @@ animation-capacity-foreground = ${colors.ricecloud-foreground}
 [module/cpu]
 type = internal/cpu
 interval = 2
+
+format = <label>
+;format = <label> <ramp-coreload>
 format-prefix = " "
 format-prefix-foreground = ${colors.ricecloud-foreground}
 format-underline = ${colors.ricecloud-accent}
+
 label = %percentage%%
+;label = %percentage-cores%
+
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
 
 
 [module/memory]

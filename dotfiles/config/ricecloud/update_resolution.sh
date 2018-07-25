@@ -7,7 +7,7 @@ xrandr --output ${1} --mode ${3}x${4} --rate ${5} --primary --output ${2} --off
 killall polybar
 
 # Update the wallpaper, since the resolution likely changed.
-nitrogen --restore
+~/.fehbg
 
 # After all updates, we pause a second to let everything close and update.
 sleep 2

@@ -10,13 +10,13 @@ xset -dpms s off
 
 # Kill all the background programs, incase we logout or something
 # and they may still be running from a previous session.
-killall -q compton dunst nitrogen polybar
+killall -q compton dunst feh polybar
 
 while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; done
 
 # Run all background programs.
-compton --config ~/.config/compton/config --respect-prop-shadow &
-nitrogen --restore &
+compton --config ~/.config/compton/config --respect-prop-shadow --vsync opengl &
+~/.fehbg &
 dunst -config ~/.config/dunst/config &
 polybar ricecloud &
 

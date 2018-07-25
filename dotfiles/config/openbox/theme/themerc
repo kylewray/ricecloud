@@ -26,8 +26,8 @@ menu.items.active.bg: flat solid
 menu.items.active.bg.color: #1a1c1e
 
 menu.items.text.color: #000000
-menu.items.disabled.text.color: #8cafcc
-menu.items.active.text.color: #537693
+menu.items.disabled.text.color: #537693
+menu.items.active.text.color: #8cafcc
 
 !! Active Windows
 window.active.title.bg: flat solid
@@ -39,19 +39,19 @@ window.active.label.bg: parentrelative
 window.active.label.text.color: #1a1c1e
 
 window.active.button.*.bg: parentrelative
-window.active.button.*.image.color: #537693
+window.active.button.*.image.color: #8cafcc
 window.active.*.bg.border.color: #282a2e
 
-window.active.button.pressed.bg.color: #537693
+window.active.button.pressed.bg.color: #8cafcc
 window.active.*.bg.border.color: #282a2e
-window.active.button.*.image.color: #537693
+window.active.button.*.image.color: #8cafcc
 
-window.active.button.hover.bg.color: #537693
+window.active.button.hover.bg.color: #8cafcc
 window.active.*.bg.border.color: #282a2e
-window.active.button.*.image.color: #537693
+window.active.button.*.image.color: #8cafcc
 
 window.active.button.disabled.bg: parentrelative
-window.active.button.*.image.color: #537693
+window.active.button.*.image.color: #8cafcc
 
 window.active.handle.bg:  flat solid
 window.active.handle.bg.color: #282a2e
@@ -69,19 +69,19 @@ window.inactive.label.bg: parentrelative
 window.inactive.label.text.color: #1a1c1e
 
 window.inactive.button.*.bg: parentrelative
-window.inactive.button.*.image.color: #8cafcc
+window.inactive.button.*.image.color: #537693
 window.inactive.*.border.color: #282a2e
 
-window.inactive.button.pressed.bg.color: #8cafcc
+window.inactive.button.pressed.bg.color: #537693
 window.inactive.*.border.color: #282a2e
-window.inactive.button.*.image.color: #8cafcc
+window.inactive.button.*.image.color: #537693
 
-window.inactive.button.hover.bg.color: #8cafcc
+window.inactive.button.hover.bg.color: #537693
 window.inactive.*.border.color: #282a2e
-window.inactive.button.*.image.color: #8cafcc
+window.inactive.button.*.image.color: #537693
 
 window.inactive.button.disabled.bg: parentrelative
-window.inactive.button.*.image.color: #8cafcc
+window.inactive.button.*.image.color: #537693
 
 window.inactive.handle.bg: flat solid
 window.inactive.handle.bg.color: #282a2e

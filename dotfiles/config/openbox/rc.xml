@@ -41,7 +41,8 @@
   </placement>
   <theme>
     <name>ricecloud</name>
-    <titleLayout>DSLIMC</titleLayout>
+    <!--titleLayout>DSLIMC</titleLayout-->
+    <titleLayout>SMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -385,6 +386,15 @@
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="W-Tab">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>rofi</name>
+        </startupnotify>
+        <command>~/.config/rofi/launch_window_switcher.sh</command>
+      </action>
+    </keybind>
+    <!--keybind key="W-Tab">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
@@ -392,8 +402,8 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind>
-    <keybind key="W-S-Tab">
+    </keybind-->
+    <!--keybind key="W-S-Tab">
       <action name="PreviousWindow">
         <finalactions>
           <action name="Focus"/>
@@ -401,7 +411,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind>
+    </keybind-->
     <!--keybind key="W-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
@@ -468,12 +478,14 @@
     <!-- Backlight controls -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>xbacklight -inc 20</command>
+        <!--command>xbacklight -inc 20</command-->
+        <command>~/.config/ricecloud/update_backlight.sh + 10</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>xbacklight -dec 20</command>
+        <!--command>xbacklight -dec 20</command-->
+        <command>~/.config/ricecloud/update_backlight.sh - 10</command>
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
@@ -481,11 +493,11 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>io.elementary.terminal</name>
-          <!--name>termite</name-->
+          <!--name>io.elementary.terminal</name-->
+          <name>termite</name>
         </startupnotify>
-        <!--command>termite</command-->
-        <command>io.elementary.terminal</command>
+        <command>termite</command>
+        <!--command>io.elementary.terminal</command-->
       </action>
     </keybind>
     <keybind key="W-space">
@@ -494,7 +506,7 @@
           <enabled>true</enabled>
           <name>rofi</name>
         </startupnotify>
-        <command>~/.config/rofi/launch.sh</command>
+        <command>~/.config/rofi/launch_application_launcher.sh</command>
       </action>
     </keybind>
     <keybind key="W-Escape">

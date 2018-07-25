@@ -117,16 +117,64 @@ export RICECLOUD_COLOR_WARNING=$RICECLOUD_COLOR_9
 #export RICECLOUD_COLOR_WARNING=$RICECLOUD_COLOR_9
 ## ----------------------------------------------------------------
 
+## ----------------------------------------------------------------
+## Cyberpunk Color Scheme
+## ----------------------------------------------------------------
+## font
+#export RICECLOUD_GUI_FONT="Source Sans Pro"
+#export RICECLOUD_GUI_FONT_SIZE="14"
+#export RICECLOUD_TERMINAL_FONT="Source Code Pro"
+#export RICECLOUD_TERMINAL_FONT_SIZE="12"
+#
+## opacity/transparency
+#export RICECLOUD_COLOR_OPACITY=100
+#export RICECLOUD_COLOR_TRANSPARENCY=0
+#
+## background/foreground
+#export RICECLOUD_COLOR_FOREGROUND=#a9e4e4
+#export RICECLOUD_COLOR_CURSOR=#a9e4e4
+#export RICECLOUD_COLOR_BACKGROUND=#091414
+#
+## black
+#export RICECLOUD_COLOR_0=#041411
+#export RICECLOUD_COLOR_8=#202528
+#
+## red
+#export RICECLOUD_COLOR_1=#551111
+#export RICECLOUD_COLOR_9=#ee1122
+#
+## green
+#export RICECLOUD_COLOR_2=#227744
+#export RICECLOUD_COLOR_10=#44cc88
+#
+## yellow
+#export RICECLOUD_COLOR_3=#a17325
+#export RICECLOUD_COLOR_11=#dfb73e
+#
+## blue
+#export RICECLOUD_COLOR_4=#14202c
+#export RICECLOUD_COLOR_12=#3a5e82
+#
+## magenta
+#export RICECLOUD_COLOR_5=#072c50
+#export RICECLOUD_COLOR_13=#135da5
+#
+## cyan
+#export RICECLOUD_COLOR_6=#227788
+#export RICECLOUD_COLOR_14=#55dddd
+#
+## white
+#export RICECLOUD_COLOR_7=#98f6ff
+#export RICECLOUD_COLOR_15=#98f6ff
+#
+## custom descriptors
+#export RICECLOUD_COLOR_TEXT=$RICECLOUD_COLOR_15
+#export RICECLOUD_COLOR_HIGHLIGHT=$RICECLOUD_COLOR_10
+#export RICECLOUD_COLOR_ACCENT=$RICECLOUD_COLOR_12
+#export RICECLOUD_COLOR_WARNING=$RICECLOUD_COLOR_9
+## ----------------------------------------------------------------
 
 # vim -- uses terminal color scheme
-
-# pantheon terminal
-gsettings set io.elementary.terminal.settings font "${RICECLOUD_TERMINAL_FONT} ${RICECLOUD_TERMINAL_FONT_SIZE}"
-gsettings set io.elementary.terminal.settings background "${RICECLOUD_COLOR_BACKGROUND}"
-gsettings set io.elementary.terminal.settings foreground "${RICECLOUD_COLOR_FOREGROUND}"
-gsettings set io.elementary.terminal.settings cursor-color "${RICECLOUD_COLOR_CURSOR}"
-gsettings set io.elementary.terminal.settings palette "${RICECLOUD_COLOR_0}:${RICECLOUD_COLOR_1}:${RICECLOUD_COLOR_2}:${RICECLOUD_COLOR_3}:${RICECLOUD_COLOR_4}:${RICECLOUD_COLOR_5}:${RICECLOUD_COLOR_6}:${RICECLOUD_COLOR_7}:${RICECLOUD_COLOR_8}:${RICECLOUD_COLOR_9}:${RICECLOUD_COLOR_10}:${RICECLOUD_COLOR_11}:${RICECLOUD_COLOR_12}:${RICECLOUD_COLOR_13}:${RICECLOUD_COLOR_14}:${RICECLOUD_COLOR_15}"
-
 
 # termite
 sed -i -e "s/font=.*/font=${RICECLOUD_TERMINAL_FONT} ${RICECLOUD_TERMINAL_FONT_SIZE}/g" $RICECLOUD_CONFIG/termite/config
@@ -151,6 +199,13 @@ sed -i -e "s/color12 .*/color12 = ${RICECLOUD_COLOR_12}/g" $RICECLOUD_CONFIG/ter
 sed -i -e "s/color13 .*/color13 = ${RICECLOUD_COLOR_13}/g" $RICECLOUD_CONFIG/termite/config
 sed -i -e "s/color14 .*/color14 = ${RICECLOUD_COLOR_14}/g" $RICECLOUD_CONFIG/termite/config
 sed -i -e "s/color15 .*/color15 = ${RICECLOUD_COLOR_15}/g" $RICECLOUD_CONFIG/termite/config
+
+## pantheon terminal
+#gsettings set io.elementary.terminal.settings font "${RICECLOUD_TERMINAL_FONT} ${RICECLOUD_TERMINAL_FONT_SIZE}"
+#gsettings set io.elementary.terminal.settings background "${RICECLOUD_COLOR_BACKGROUND}"
+#gsettings set io.elementary.terminal.settings foreground "${RICECLOUD_COLOR_FOREGROUND}"
+#gsettings set io.elementary.terminal.settings cursor-color "${RICECLOUD_COLOR_CURSOR}"
+#gsettings set io.elementary.terminal.settings palette "${RICECLOUD_COLOR_0}:${RICECLOUD_COLOR_1}:${RICECLOUD_COLOR_2}:${RICECLOUD_COLOR_3}:${RICECLOUD_COLOR_4}:${RICECLOUD_COLOR_5}:${RICECLOUD_COLOR_6}:${RICECLOUD_COLOR_7}:${RICECLOUD_COLOR_8}:${RICECLOUD_COLOR_9}:${RICECLOUD_COLOR_10}:${RICECLOUD_COLOR_11}:${RICECLOUD_COLOR_12}:${RICECLOUD_COLOR_13}:${RICECLOUD_COLOR_14}:${RICECLOUD_COLOR_15}"
 
 # Xresources
 sed -i -e "s/foreground.*/foreground: ${RICECLOUD_COLOR_FOREGROUND}/g" $RICECLOUD_ROOT/Xresources
@@ -181,9 +236,9 @@ sed -i -e "s/color15.*/color15: ${RICECLOUD_COLOR_15}/g" $RICECLOUD_ROOT/Xresour
 #OPENBOX_INACTIVE_BUTTON=$RICECLOUD_COLOR_12
 OPENBOX_BORDER=$RICECLOUD_COLOR_0
 OPENBOX_ACTIVE=$RICECLOUD_COLOR_BACKGROUND
-OPENBOX_ACTIVE_BUTTON=$RICECLOUD_COLOR_4
+OPENBOX_ACTIVE_BUTTON=$RICECLOUD_COLOR_12
 OPENBOX_INACTIVE=$RICECLOUD_COLOR_BACKGROUND
-OPENBOX_INACTIVE_BUTTON=$RICECLOUD_COLOR_12
+OPENBOX_INACTIVE_BUTTON=$RICECLOUD_COLOR_4
 sed -i -e "s/window.active.border.color: .*/window.active.border.color: ${OPENBOX_BORDER}/g" $RICECLOUD_CONFIG/openbox/theme/themerc
 sed -i -e "s/window.inactive.border.color: .*/window.inactive.border.color: ${OPENBOX_BORDER}/g" $RICECLOUD_CONFIG/openbox/theme/themerc
 sed -i -e "s/window.frameColor: .*/window.frameColor: ${OPENBOX_BORDER}/g" $RICECLOUD_CONFIG/openbox/theme/themerc

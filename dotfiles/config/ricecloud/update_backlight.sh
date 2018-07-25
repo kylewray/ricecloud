@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CUR_BRIGHTNESS=`more /sys/class/backlight/intel_backlight/brightness`
-MAX_BRIGHTNESS=`more /sys/class/backlight/intel_backlight/max_brightness`
+CUR_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/brightness`
+MAX_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/max_brightness`
 NEW_BRIGHTNESS=$CUR_BRIGHTNESS
 
 #echo "Current: $CUR_BRIGHTNESS"
@@ -12,10 +12,11 @@ if [ $# -eq 2 ]; then
     DESIRED_AMOUNT=`python -c "x = $PERCENTAGE / 100.0 * $MAX_BRIGHTNESS; print(x)"`
     #echo "Percentage: $PERCENTAGE"
     #echo "Desired Amount: $DESIRED_AMOUNT"
-    if [ $1 == "+" ]; then
+
+    if [ "$1" == "+" ]; then
         NEW_BRIGHTNESS=`python -c "x = min($MAX_BRIGHTNESS - 1, $CUR_BRIGHTNESS + $DESIRED_AMOUNT); print(int(x))"`
         #echo "Increase to $NEW_BRIGHTNESS"
-    elif [ $1 == "-" ]; then
+    elif [ "$1" == "-" ]; then
         NEW_BRIGHTNESS=`python -c "x = max(1, $CUR_BRIGHTNESS - $DESIRED_AMOUNT); print(int(x))"`
         #echo "Decrease to $NEW_BRIGHTNESS"
     fi

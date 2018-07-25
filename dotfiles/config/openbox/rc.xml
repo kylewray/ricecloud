@@ -493,11 +493,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <!--name>io.elementary.terminal</name-->
           <name>termite</name>
         </startupnotify>
         <command>termite</command>
-        <!--command>io.elementary.terminal</command-->
       </action>
     </keybind>
     <keybind key="W-space">

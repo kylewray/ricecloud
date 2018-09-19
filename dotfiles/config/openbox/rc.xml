@@ -385,16 +385,16 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="W-Tab">
+    <!--keybind key="W-Tab">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>rofi</name>
         </startupnotify>
-        <command>~/.config/rofi/launch_window_switcher.sh</command>
+        <command>~/.config/ricecloud/execute_window_switcher.sh</command>
       </action>
-    </keybind>
-    <!--keybind key="W-Tab">
+    </keybind-->
+    <keybind key="W-Tab">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
@@ -402,8 +402,8 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind-->
-    <!--keybind key="W-S-Tab">
+    </keybind>
+    <keybind key="W-S-Tab">
       <action name="PreviousWindow">
         <finalactions>
           <action name="Focus"/>
@@ -411,7 +411,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind-->
+    </keybind>
     <!--keybind key="W-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
@@ -504,7 +504,7 @@
           <enabled>true</enabled>
           <name>rofi</name>
         </startupnotify>
-        <command>~/.config/rofi/launch_application_launcher.sh</command>
+        <command>~/.config/ricecloud/execute_application_launcher.sh</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
@@ -513,7 +513,16 @@
           <enabled>true</enabled>
           <name>oblogout</name>
         </startupnotify>
-        <command>~/.config/oblogout/launch.sh</command>
+        <command>~/.config/ricecloud/execute_logout_screen.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-backslash">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>i3lock</name>
+        </startupnotify>
+        <command>~/.config/ricecloud/execute_lock_screen.sh</command>
       </action>
     </keybind>
   </keyboard>

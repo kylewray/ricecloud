@@ -2,7 +2,7 @@
 usehal = false
 
 [looks]
-opacity = 100
+opacity = 0
 bgcolor = black
 buttontheme = ricecloud
 buttons = cancel, lock, logout, suspend, restart, shutdown

@@ -16,8 +16,16 @@ ln -s $RICECLOUD_CONFIG/ricecloud/config $HOME/.config/ricecloud/config
 ln -s $RICECLOUD_CONFIG/ricecloud/update_resolution.sh $HOME/.config/ricecloud/update_resolution.sh
 ln -s $RICECLOUD_CONFIG/ricecloud/update_resolution.py $HOME/.config/ricecloud/update_resolution.py
 ln -s $RICECLOUD_CONFIG/ricecloud/update_backlight.sh $HOME/.config/ricecloud/update_backlight.sh
+ln -s $RICECLOUD_CONFIG/ricecloud/execute_application_launcher.sh $HOME/.config/ricecloud/execute_application_launcher.sh
+ln -s $RICECLOUD_CONFIG/ricecloud/execute_window_switcher.sh $HOME/.config/ricecloud/execute_window_switcher.sh
+ln -s $RICECLOUD_CONFIG/ricecloud/execute_logout_screen.sh $HOME/.config/ricecloud/execute_logout_screen.sh
+ln -s $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh $HOME/.config/ricecloud/execute_lock_screen.sh
 chmod +x $HOME/.config/ricecloud/update_resolution.sh
 chmod +x $HOME/.config/ricecloud/update_backlight.sh
+chmod +x $HOME/.config/ricecloud/execute_application_launcher.sh
+chmod +x $HOME/.config/ricecloud/execute_window_switcher.sh
+chmod +x $HOME/.config/ricecloud/execute_logout_screen.sh
+chmod +x $HOME/.config/ricecloud/execute_lock_screen.sh
 
 mkdir $HOME/.config/openbox
 ln -s $RICECLOUD_CONFIG/openbox/autostart $HOME/.config/openbox/autostart
@@ -40,15 +48,9 @@ mkdir $HOME/.config/ranger
 
 mkdir $HOME/.config/rofi
 ln -s $RICECLOUD_CONFIG/rofi/config $HOME/.config/rofi/config
-ln -s $RICECLOUD_CONFIG/rofi/launch_application_launcher.sh $HOME/.config/rofi/launch_application_launcher.sh
-ln -s $RICECLOUD_CONFIG/rofi/launch_window_switcher.sh $HOME/.config/rofi/launch_window_switcher.sh
-chmod +x $HOME/.config/rofi/launch_application_launcher.sh
-chmod +x $HOME/.config/rofi/launch_window_switcher.sh
 
 mkdir $HOME/.config/oblogout
 ln -s $RICECLOUD_CONFIG/oblogout/config $HOME/.config/oblogout/config
-ln -s $RICECLOUD_CONFIG/oblogout/launch.sh $HOME/.config/oblogout/launch.sh
-chmod +x $HOME/.config/oblogout/launch.sh
 
 mkdir $HOME/.config/polybar
 ln -s $RICECLOUD_CONFIG/polybar/config $HOME/.config/polybar/config

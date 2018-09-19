@@ -4,7 +4,7 @@
 !rofi.padding: 200
 !rofi.columns: 4
 rofi.eh: 2
-!rofi.bw: 0
+rofi.bw: 3
 rofi.hide-scrollbar: true
 rofi.separator-style: none
 !rofi.dpi: 180
@@ -12,7 +12,7 @@ rofi.separator-style: none
 ! Rofi Color Scheme
 rofi.font: Source Sans Pro 14
 rofi.color-enabled: true
-rofi.color-window: #fe1e1c1a, #fe1e1c1a, #fe1e1c1a
+rofi.color-window: #fe1e1c1a, #fe2e2a28, #fe1e1c1a
 rofi.color-normal: #fe1e1c1a, #fed1cecc, #fe1e1c1a, #fe68ccc2, #fe1e1c1a
 rofi.color-active: #fe1e1c1a, #feccaf8c, #fe1e1c1a, #fe68ccc2, #fe1e1c1a
 rofi.color-urgent: #fe1e1c1a, #fe6f6fdb, #fe1e1c1a, #fe68ccc2, #fe1e1c1a

@@ -292,12 +292,13 @@ export ROFI_OPACITY=100
 # replace ROFI_OPACITY in the 5 lines below with RICECLOUD_COLOR_OPACITY.
 # This code below flips the colors to be ABGR... Remove when fixed.
 ROFI_BACKGROUND=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_BACKGROUND"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
+ROFI_BORDER=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_0"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
 ROFI_FOREGROUND=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_HIGHLIGHT"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
 ROFI_NORMAL=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_TEXT"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
 ROFI_ACTIVE=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_ACCENT"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
 ROFI_URGENT=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_WARNING"][1:]; opacity=int(float(os.environ["ROFI_OPACITY"]) * 2.55); print("#{0:0{1}x}%s%s%s".format(opacity, 2) % (color[4:6], color[2:4], color[0:2]))'`
 sed -i -e "s/rofi.font:.*/rofi.font: ${RICECLOUD_GUI_FONT} ${RICECLOUD_GUI_FONT_SIZE}/g" $RICECLOUD_CONFIG/rofi/config
-sed -i -e "s/rofi.color-window:.*/rofi.color-window: ${ROFI_BACKGROUND}, ${ROFI_BACKGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
+sed -i -e "s/rofi.color-window:.*/rofi.color-window: ${ROFI_BACKGROUND}, ${ROFI_BORDER}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
 sed -i -e "s/rofi.color-normal:.*/rofi.color-normal: ${ROFI_BACKGROUND}, ${ROFI_NORMAL}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
 sed -i -e "s/rofi.color-active:.*/rofi.color-active: ${ROFI_BACKGROUND}, ${ROFI_ACTIVE}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
 sed -i -e "s/rofi.color-urgent:.*/rofi.color-urgent: ${ROFI_BACKGROUND}, ${ROFI_URGENT}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
@@ -312,9 +313,11 @@ sed -i -e "s/bgcolor .*/bgcolor = black/g" $RICECLOUD_CONFIG/oblogout/config
 # any semi-transparency works perfectly. Thus, the background below is slightly opaque. Make it full when they fix this.
 export POLYBAR_OPACITY=100
 POLYBAR_BACKGROUND=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_BACKGROUND"][1:]; opacity=int(float(os.environ["POLYBAR_OPACITY"]) * 2.55); print("#{0:0{1}x}%s".format(opacity, 2) % (color))'`
+POLYBAR_BORDER=`python -c 'import os; color=os.environ["RICECLOUD_COLOR_0"][1:]; opacity=int(float(os.environ["POLYBAR_OPACITY"]) * 2.55); print("#{0:0{1}x}%s".format(opacity, 2) % (color))'`
 sed -i -e "s/font-0 = .*/font-0 = ${RICECLOUD_GUI_FONT}:pixelsize=${RICECLOUD_GUI_FONT_SIZE}\;0/g" $RICECLOUD_CONFIG/polybar/config
 sed -i -e "s/font-1 = .*/font-1 = FontAwesome:pixelsize=${RICECLOUD_GUI_FONT_SIZE}\;0/g" $RICECLOUD_CONFIG/polybar/config
 sed -i -e "s/ricecloud-background .*/ricecloud-background = ${POLYBAR_BACKGROUND}/g" $RICECLOUD_CONFIG/polybar/config
+sed -i -e "s/ricecloud-border .*/ricecloud-border = ${POLYBAR_BORDER}/g" $RICECLOUD_CONFIG/polybar/config
 sed -i -e "s/ricecloud-foreground .*/ricecloud-foreground = ${RICECLOUD_COLOR_FOREGROUND}/g" $RICECLOUD_CONFIG/polybar/config
 sed -i -e "s/ricecloud-text .*/ricecloud-text = ${RICECLOUD_COLOR_TEXT}/g" $RICECLOUD_CONFIG/polybar/config
 sed -i -e "s/ricecloud-highlight .*/ricecloud-highlight = ${RICECLOUD_COLOR_HIGHLIGHT}/g" $RICECLOUD_CONFIG/polybar/config

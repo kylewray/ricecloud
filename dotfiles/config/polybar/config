@@ -2,6 +2,7 @@
 ; Note: Alpha is bugged for some icons unless I give it a
 ; little opacity... Hence the "#01..." below.
 ricecloud-background = #fe1a1c1e
+ricecloud-border = #fe282a2e
 ricecloud-foreground = #ccced1
 ricecloud-text = #ccced1
 ricecloud-highlight = #c2cc68
@@ -27,14 +28,19 @@ modules-right = cpu memory volume backlight wlan battery
 line-size = 3
 line-color = ${colors.ricecloud-highlight}
 
-border-size = 6
+border-size = 0
 border-color = ${colors.ricecloud-background}
+
+border-top-size = 3
+border-top-color = ${colors.ricecloud-background}
+
+border-bottom-size = 3
+border-bottom-color = ${colors.ricecloud-border}
 
 module-margin-left = 2
 module-margin-right = 2
 
-padding-left = 1
-padding-right = 2
+padding = 3
 
 font-0 = Source Sans Pro:pixelsize=14;0
 font-1 = FontAwesome:pixelsize=14;0

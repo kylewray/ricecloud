@@ -15,7 +15,7 @@ killall -q compton dunst feh polybar
 while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; done
 
 # Run all background programs.
-compton --config ~/.config/compton/config --respect-prop-shadow --vsync opengl &
+#compton --config ~/.config/compton/config --respect-prop-shadow --vsync opengl &
 ~/.fehbg &
 dunst -config ~/.config/dunst/config &
 polybar ricecloud &

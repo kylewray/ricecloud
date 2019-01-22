@@ -303,8 +303,24 @@ sed -i -e "s/rofi.color-normal:.*/rofi.color-normal: ${ROFI_BACKGROUND}, ${ROFI_
 sed -i -e "s/rofi.color-active:.*/rofi.color-active: ${ROFI_BACKGROUND}, ${ROFI_ACTIVE}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
 sed -i -e "s/rofi.color-urgent:.*/rofi.color-urgent: ${ROFI_BACKGROUND}, ${ROFI_URGENT}, ${ROFI_BACKGROUND}, ${ROFI_FOREGROUND}, ${ROFI_BACKGROUND}/g" $RICECLOUD_CONFIG/rofi/config
 
+# i3lock
+I3LOCK_FONT=$RICECLOUD_GUI_FONT
+I3LOCK_FONT_SIZE=`expr $RICECLOUD_GUI_FONT_SIZE + 8`
+I3LOCK_FONT_COLOR="${RICECLOUD_COLOR_FOREGROUND}ff"
+I3LOCK_TYPE_COLOR="${RICECLOUD_COLOR_0}ff"
+I3LOCK_BACKSPACE_COLOR="${RICECLOUD_COLOR_12}ff"
+I3LOCK_VERIFY_COLOR="${RICECLOUD_COLOR_12}ff"
+I3LOCK_WRONG_COLOR="${RICECLOUD_COLOR_9}ff"
+sed -i -e "s/FONT=.*/FONT=${I3LOCK_FONT}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/FONT_SIZE=.*/FONT_SIZE=${I3LOCK_FONT_SIZE}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/FONT_COLOR=.*/FONT_COLOR=${I3LOCK_FONT_COLOR}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/TYPE_COLOR=.*/TYPE_COLOR=${I3LOCK_TYPE_COLOR}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/BACKSPACE_COLOR=.*/BACKSPACE_COLOR=${I3LOCK_BACKSPACE_COLOR}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/VERIFY_COLOR=.*/VERIFY_COLOR=${I3LOCK_VERIFY_COLOR}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+sed -i -e "s/WRONG_COLOR=.*/WRONG_COLOR=${I3LOCK_WRONG_COLOR}/g" $RICECLOUD_CONFIG/ricecloud/execute_lock_screen.sh
+
 # oblogout
-sed -i -e "s/opacity .*/opacity = ${RICECLOUD_COLOR_OPACITY}/g" $RICECLOUD_CONFIG/oblogout/config
+#sed -i -e "s/opacity .*/opacity = ${RICECLOUD_COLOR_OPACITY}/g" $RICECLOUD_CONFIG/oblogout/config
 #sed -i -e "s/bgcolor .*/bgcolor = ${RICECLOUD_COLOR_BACKGROUND}/g" $RICECLOUD_CONFIG/oblogout/config
 sed -i -e "s/bgcolor .*/bgcolor = black/g" $RICECLOUD_CONFIG/oblogout/config
 

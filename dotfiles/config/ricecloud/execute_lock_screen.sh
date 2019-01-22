@@ -1,39 +1,39 @@
 #!/bin/bash
 
-BLURSCREEN="/tmp/ricecloud_blurscreen.png"
+BLUR_SCREEN="/tmp/ricecloud_blur_screen.png"
 
 # Take a screenshot and save it to the tmp directory.
-scrot $BLURSCREEN
+scrot $BLUR_SCREEN
 
-# Scale down to 0.4 size, then scale back up by 2.5=1.0/0.4. Finally, blur.
-convert $BLURSCREEN -scale 20% -scale 500% -blur 16x16 $BLURSCREEN
+# Scale down 25%, then blur the image a bit, then scale back up to fill.
+convert $BLUR_SCREEN -scale 25% -blur 4x4 -scale 400% $BLUR_SCREEN
 
 # Setup variables for the lock screen.
-SCREENWIDTH=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+SCREEN_WIDTH=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
 
-FONT="Source Sans Pro"
-FONTSIZE=18
-FONTCOLOR=ccced1ff
+FONT=Source Sans Pro
+FONT_SIZE=22
+FONT_COLOR=#ccced1ff
 
-BARSIZE=3
-TYPECOLOR=282a2eff
-BACKSPACECOLOR=282a2eff
+BAR_SIZE=3
+TYPE_COLOR=#282a2eff
+BACKSPACE_COLOR=#8cafccff
 
-VERIFCOLOR=8cafccff
-WRONGCOLOR=db6f6fff
+VERIFY_COLOR=#8cafccff
+WRONG_COLOR=#db6f6fff
 
 # Run i3lock!
-i3lock -i /tmp/ricecloud_blurscreen.png --clock \ #--indpos="x+100:y+100" \
-    --timestr="%H:%M:%S" --time-font=$FONT --timesize=$FONTSIZE --timecolor=$FONTCOLOR \
-    --datestr="%A, %m %Y" --date-font=$FONT --datesize=$FONTSIZE --datecolor=$FONTCOLOR \
-    --bar-indicator --bar-width=$SCREENWIDTH --bar-base-width=$BARSIZE \
-        --bar-max-height=$BARSIZE --bar-step=$BARSIZE --bar-periodic-step=$BARSIZE \
-        --bar-color=$TYPECOLOR --keyhlcolor=$TYPECOLOR --bshlcolor=$BACKSPACECOLOR \
-        --ringvercolor=$VERIFCOLOR --ringwrongcolor=$WRONGCOLOR \
-    --veriftext="Verifying" --verifsize=$FONTSIZE --verif-font=$FONT --verifcolor=$VERIFCOLOR \
-    --wrongtext="Incorrect" --wrongsize=$FONTSIZE --wrong-font=$FONT --wrongcolor=$WRONGCOLOR \
+i3lock -i $BLUR_SCREEN --clock \
+    --timestr="%l:%M %p" --time-font=$FONT --timesize=$FONT_SIZE --timecolor=$FONT_COLOR \
+    --datestr="%a %b %d %Y" --date-font=$FONT --datesize=$FONT_SIZE --datecolor=$FONT_COLOR \
+    --bar-indicator --bar-width=$SCREEN_WIDTH --bar-base-width=$BAR_SIZE \
+        --bar-max-height=$BAR_SIZE --bar-step=$BAR_SIZE --bar-periodic-step=$BAR_SIZE \
+        --bar-color=$TYPE_COLOR --keyhlcolor=$TYPE_COLOR --bshlcolor=$BACKSPACE_COLOR \
+        --ringvercolor=$VERIFY_COLOR --ringwrongcolor=$WRONG_COLOR \
+    --veriftext="Verifying" --verifsize=$FONT_SIZE --verif-font=$FONT --verifcolor=$VERIFY_COLOR \
+    --wrongtext="Incorrect" --wrongsize=$FONT_SIZE --wrong-font=$FONT --wrongcolor=$WRONG_COLOR \
     --noinputtext="Input Cleared" --locktext="Locking" --lockfailedtext="Lock Failed"
 
 # Remove the blurred screen image.
-rm $BLURSCREEN
+rm $BLUR_SCREEN
 

@@ -40,11 +40,13 @@ mkdir $HOME/.config/dunst
 ln -s $RICECLOUD_CONFIG/dunst/config $HOME/.config/dunst/config
 
 mkdir $HOME/.config/ranger
-#ln -s $RICECLOUD_CONFIG/ranger/rifle.conf $HOME/.config/ranger/rifle.conf
-#ln -s $RICECLOUD_CONFIG/ranger/commands.py $HOME/.config/ranger/commands.py
-#ln -s $RICECLOUD_CONFIG/ranger/commands_full.py $HOME/.config/ranger/commands_full.py
-#ln -s $RICECLOUD_CONFIG/ranger/rc.conf $HOME/.config/ranger/rc.conf
-#ln -s $RICECLOUD_CONFIG/ranger/scope.sh $HOME/.config/ranger/scope.sh
+mkdir $HOME/.config/ranger/colorschemes
+ln -s $RICECLOUD_CONFIG/ranger/rc.conf $HOME/.config/ranger/rc.conf
+ln -s $RICECLOUD_CONFIG/ranger/commands.py $HOME/.config/ranger/commands.py
+ln -s $RICECLOUD_CONFIG/ranger/rifle.conf $HOME/.config/ranger/rifle.conf
+ln -s $RICECLOUD_CONFIG/ranger/scope.sh $HOME/.config/ranger/scope.sh
+ln -s $RICECLOUD_CONFIG/ranger/colorschemes/__init__.py $HOME/.config/ranger/colorschemes/__init__.py
+ln -s $RICECLOUD_CONFIG/ranger/colorschemes/ricecloud.py $HOME/.config/ranger/colorschemes/ricecloud.py
 
 mkdir $HOME/.config/rofi
 ln -s $RICECLOUD_CONFIG/rofi/config $HOME/.config/rofi/config

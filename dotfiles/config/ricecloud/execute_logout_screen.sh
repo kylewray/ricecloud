@@ -3,16 +3,16 @@
 killall -q oblogout
 while pgrep -u $UID -x "oblogout" >/dev/null; do sleep 1; done
 
-BLURSCREEN="/tmp/ricecloud_blurscreen.png"
+BLUR_SCREEN="/tmp/ricecloud_blur_screen.png"
 
 # Take a screenshot and save it to the tmp directory.
-scrot $BLURSCREEN
+scrot $BLUR_SCREEN
 
-# Scale down to 0.4 size, then scale back up by 2.5=1.0/0.4. Finally, blur.
-convert $BLURSCREEN -scale 20% -scale 500% -blur 16x16 $BLURSCREEN
+# Scale down 25% then blur the image a bit. This is really fast.
+convert $BLUR_SCREEN -scale 25% -blur 4x4 $BLUR_SCREEN
 
 # Show the screenshot in the background and get the process id.
-feh -F $BLURSCREEN &
+feh -F -Z $BLUR_SCREEN &
 FEHPID=$!
 
 # Run oblogout!
@@ -22,5 +22,5 @@ oblogout --config $HOME/.config/oblogout/config
 kill -15 $FEHPID
 
 # Remove the blurred screen image.
-rm $BLURSCREEN
+rm $BLUR_SCREEN
 

@@ -1,0 +1,114 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Automatically enable colors for the ls command.
+alias ls='ls --color=auto'
+
+function ricecloud_bash_prompt_command
+{
+    local RESET_COLOR="\[\033[0m\]"
+
+    local TEXT_COLOR="\[\033[37m\]"         # Light Gray
+    local BACKGROUND_COLOR="\[\033[49m\]"   # Default
+    local HIGHLIGHT_COLOR="\[\033[0;92m\]"  # Light Green
+    local ACCENT_COLOR="\[\033[0;94m\]"     # Light Blue
+    local WARNING_COLOR="\[\033[0;91m\]"    # Light Red
+
+    local NAME=""
+    local NAME_COLOR=$TEXT_COLOR
+    if [ "$HOSTNAME" != "snowspine" ] ; then
+        local NAME="@\h"
+    fi
+    if [ "$USER" != "winter" ] ; then
+        local NAME="\u$NAME"
+    fi
+    if [ $EUID -eq 0 ] ; then
+        local NAME_COLOR=$ACCENT_COLOR
+    elif [ $? -ne 0 ] ; then
+        local NAME_COLOR=$WARNING_COLOR
+    fi
+
+    local DIR="\W"
+    local DIR_COLOR=$TEXT_COLOR
+    if [ $? -ne 0 ] ; then
+        local DIR_COLOR=$WARNING_COLOR
+    fi
+
+    local GIT=""
+    local GIT_COLOR="$ACCENT_COLOR"
+    local TOP_LEVEL=`git rev-parse --show-toplevel 2> /dev/null`
+    if [ "$TOP_LEVEL" != "" ] ; then
+        local REPOSITORY=`basename $TOP_LEVEL`
+        local BRANCH=`git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'`
+        local GIT="${REPOSITORY}${BRANCH}"
+
+        local STATUS=`git status --porcelain 2> /dev/null`
+        if [ "$STATUS" != "" ] ; then
+            local GIT_COLOR=$HIGHLIGHT_COLOR
+        fi
+    fi
+
+    local PROMPT=">"
+    local PROMPT_COLOR=$ACCENT_COLOR
+
+    # Primary Prompt: Displayed before each command.
+    #export PS1='[\u@\h \W]\$ '
+    PS1=""
+    if [ "$NAME" != "" ] ; then
+        PS1="${NAME_COLOR}${NAME} ${PROMPT_COLOR}~ "
+    fi
+    PS1="${PS1}${DIR_COLOR}${DIR} "
+    if [ "$GIT" != "" ] ; then
+        PS1="${PS1}${PROMPT_COLOR}~ ${GIT_COLOR}${GIT} "
+    fi
+    PS1="${PS1}${PROMPT_COLOR}${PROMPT} "
+    PS1="${PS1}${RESET_COLOR}"
+
+    # Secondary Prompt: Displayed when a command needs more input.
+    PS2="> "
+
+    # Tertiary Prompt: For interactive menus, rarely used.
+    PS3="~ "
+
+    # Quaternary Prompt: For debugging bash scripts to indicate levels of indirection, rarely used.
+    PS4="- "
+}
+
+## Put this in a function to hide these variables from being defined in terminal.
+#function ricecloud_bash_prompt_command_test
+#{
+#
+#    # Set the user colors and output.
+#
+#    local USERNAME=
+#    if [ `whoami` -eq "winter" ] ; then
+#    fi
+#
+#    local COLOR=$W
+#
+#    # Primary Prompt: Displayed before each command.
+#    #export PS1='[\u@\h \W]\$ '
+#    PS1="[${COLOR}\u${BGW}${B}@\h ${NONE}\W]\$ "
+#
+#    # Secondary Prompt: Displayed when a command needs more input.
+#    PS2="> "
+#
+#    # Tertiary Prompt: For interactive menus, rarely used.
+#    PS3="~ "
+#
+#    # Quaternary Prompt: For debugging bash scripts to indicate levels of indirection, rarely used.
+#    PS4="- "
+#}
+
+PROMPT_COMMAND=ricecloud_bash_prompt_command
+ricecloud_bash_prompt_command
+#unset ricecloud_bash_prompt_command
+
+# Only load the ~/.config/ranger/rc.conf. Do *not* double-load the
+# other default rc.conf file!
+RANGER_LOAD_DEFAULT_RC=FALSE
+

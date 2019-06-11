@@ -3,6 +3,7 @@
 export RICECLOUD_ROOT=$HOME/development/ricecloud/dotfiles
 export RICECLOUD_CONFIG=$RICECLOUD_ROOT/config
 
+ln -s $RICECLOUD_ROOT/bashrc $HOME/.bashrc
 ln -s $RICECLOUD_ROOT/vimrc $HOME/.vimrc
 ln -s $RICECLOUD_ROOT/Xresources $HOME/.Xresources
 

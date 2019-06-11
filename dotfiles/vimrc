@@ -31,16 +31,31 @@ syn on
 " Show matching parenthesis.
 set showmatch
 
+" Assign files with non-standard extensions to use syntax highlighting.
+au BufRead,BufNewFile *.cls,*.sty set syn=tex
+au BufRead,BufNewFile *.cu set syn=cpp
+
+" Enable spell-checking for text files.
+au BufRead,BufNewFile *.txt,*.tex,*.cls,*.sty set spell
+
 
 " Tabs and Spacing
 " ----------------
 
-" Auto and smart indentation. Optionally, return and
-" auto-indent once a certain number of characters is
-" reached.
-"set textwidth=120
+" Auto and smart indentation. Optionally, return and auto-indent
+" once a certain number of characters is reached.
 set autoindent
 set smartindent
+
+" Set wrap and line break. First we set the default: no wrap and no linebreak.
+" Then, we override this with wraps and linebreaks on words only for text files.
+set nowrap
+set nolinebreak
+au BufRead,BufNewFile *.txt,*.tex set wrap linebreak nolist textwidth=0 wrapmargin=0
+"set wrap
+"set linebreak
+"set textwidth=120
+"set wrapmargin=0
 
 " Setup the tabs to be 4 spaces.
 set tabstop=4
@@ -55,7 +70,7 @@ set shiftround
 set smarttab
 
 " For some file types, intelligently use different indenting.
-filetype plugin indent on
+"filetype plugin indent on
 
 
 " Searching

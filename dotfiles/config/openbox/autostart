@@ -19,4 +19,5 @@ while pgrep -u $UID -x "compton|dunst|nitrogen|polybar" >/dev/null; do sleep 1; 
 ~/.fehbg &
 dunst -config ~/.config/dunst/config &
 polybar ricecloud &
+mopidy &
 

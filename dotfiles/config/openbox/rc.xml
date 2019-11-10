@@ -396,6 +396,7 @@
     </keybind-->
     <keybind key="W-Tab">
       <action name="NextWindow">
+        <bar>no</bar>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -405,6 +406,7 @@
     </keybind>
     <keybind key="W-S-Tab">
       <action name="PreviousWindow">
+        <bar>no</bar>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -414,6 +416,7 @@
     </keybind>
     <!--keybind key="W-A-Tab">
       <action name="NextWindow">
+        <bar>no</bar>
         <panels>yes</panels>
         <desktop>yes</desktop>
         <finalactions>

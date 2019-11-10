@@ -72,6 +72,9 @@ set smarttab
 " For some file types, intelligently use different indenting.
 "filetype plugin indent on
 
+" For some file types, we need to enable plugins.
+"filetype plugin on
+
 
 " Searching
 " ---------
@@ -127,4 +130,10 @@ set ttymouse=xterm2
 " All input interactions should be fast.
 set ttyfast
 
+
+" TODO: Update vimrc from other vimrc files.
+
+
+" TODO: Temp.
+let g:latex_to_unicode_file_types = ".*"
 

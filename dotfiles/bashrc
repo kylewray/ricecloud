@@ -112,3 +112,6 @@ ricecloud_bash_prompt_command
 # other default rc.conf file!
 RANGER_LOAD_DEFAULT_RC=FALSE
 
+# For building the ADM book, we need an updated pythontex.
+alias pythontex='python /home/winter/research/book/algorithms_for_decision_making/pythontex/pythontex/pythontex.py'
+

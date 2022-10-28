@@ -8,7 +8,7 @@ set nocompatible
 " Set the command height to be 1 unit tall.
 set cmdheight=1
 
-" Enable line numbers.
+" Enable line numbers. Make them relative
 set number
 set relativenumber
 
@@ -134,7 +134,7 @@ set backspace=indent,eol,start
 
 " Enable the mouse for selecting text.
 set mouse=a
-set ttymouse=xterm2
+"set ttymouse=xterm2
 
 " All input interactions should be fast.
 set ttyfast
@@ -143,43 +143,28 @@ set ttyfast
 " Packages
 " --------
 
-" Before using Vundle, we have to disable filetype detection.
-filetype off
-
-" Use Vundle to manage the various packages. This sets the runtime
-" path to include Vundle's vim config file.
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Begin Vundle plugin loading.
-call vundle#begin()
-
-" Note: There are many valid formats to define a plugin.
-" The primary way is to assume github.com and specify
-" 'user/project'. Vundle will take care of the rest.
-
-" Note: To actually install a package, add it below then
-" quit vim and run the command 'vim +PluginInstall +qall'.
-
-" It must be the Vundle can manage itself as a package.
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 
 " Include powerline for a pretty statusline.
-Plugin 'itchyny/lightline.vim'
+Plug 'https://github.com/itchyny/lightline.vim'
 
 " Include NERDTree for file/project browsing.
-Plugin 'scrooloose/nerdtree'
+Plug 'https://github.com/scrooloose/nerdtree'
 
-" Include vim-multiple-cursors for multiple cursors.
-Plugin 'terryma/vim-multiple-cursors'
+" Include vim-visual-multi for multiple cursors.
+"Plug 'terryma/vim-multiple-cursors'
+Plug 'https://github.com/mg979/vim-visual-multi'
 
 " Include julia synatx highlighting and unicode support.
-Plugin 'JuliaEditorSupport/julia-vim'
+Plug 'https://github.com/JuliaEditorSupport/julia-vim'
 
-" End Vundle plugin loading.
-call vundle#end()
+" Include conquer of completion (coc) for code completion.
+" CocInstall coc-json coc-html coc-css coc-tsserver coc-python coc-julia
+Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
 
-" Re-enable filetype detection, allowing for different indenting.
-filetype plugin indent on
+set encoding=UTF-8
+
+call plug#end()
 
 
 " Package Customization and Commands

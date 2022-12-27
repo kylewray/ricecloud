@@ -26,7 +26,7 @@ set noswapfile
 " ------------
 
 " Enable syntax highlighting with a color scheme.
-"colorscheme wombat256mod
+"colorscheme XYZ
 syn on
 
 " Change the color of the pop-up menus to be more muted.
@@ -163,6 +163,9 @@ call vundle#begin()
 " It must be the Vundle can manage itself as a package.
 Plugin 'VundleVim/Vundle.vim'
 
+" Include Everforest for pretty and intelligent colorscheme.
+Plugin 'sainnhe/everforest'
+
 " Include powerline for a pretty statusline.
 Plugin 'itchyny/lightline.vim'
 
@@ -172,8 +175,11 @@ Plugin 'scrooloose/nerdtree'
 " Include vim-multiple-cursors for multiple cursors.
 Plugin 'terryma/vim-multiple-cursors'
 
-" Include julia synatx highlighting and unicode support.
+" Include julia syntax highlighting and unicode support.
 Plugin 'JuliaEditorSupport/julia-vim'
+
+" Include treesitter for intelligent syntax and code highlighting.
+Plugin 'nvim-treesitter/nvim-treesitter'
 
 " End Vundle plugin loading.
 call vundle#end()
@@ -196,4 +202,19 @@ map <C-o> :NERDTreeToggle<CR>
 
 " Always use 'LatexToUnicode' (julia-vim); this the allows '\' unicode command.
 let g:latex_to_unicode_file_types = ".*"
+
+" Enable and setup Everforest color scheme.
+if has('termguicolors')
+    set termguicolors
+endif
+
+set background=dark
+
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+
+colorscheme everforest
+
+" Set the colorscheme for lightline to be Everforest.
+let g:lightline = {'colorscheme' : 'everforest'}
 

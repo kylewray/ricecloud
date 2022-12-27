@@ -26,7 +26,7 @@ set noswapfile
 " ------------
 
 " Enable syntax highlighting with a color scheme.
-"colorscheme wombat256mod
+" colorscheme XYZ
 syn on
 
 " Change the color of the pop-up menus to be more muted.
@@ -145,6 +145,9 @@ set ttyfast
 
 call plug#begin()
 
+" Include Everforest for pretty and intelligent colorscheme.
+Plug 'https://github.com/sainnhe/everforest'
+
 " Include powerline for a pretty statusline.
 Plug 'https://github.com/itchyny/lightline.vim'
 
@@ -155,12 +158,15 @@ Plug 'https://github.com/scrooloose/nerdtree'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'https://github.com/mg979/vim-visual-multi'
 
-" Include julia synatx highlighting and unicode support.
+" Include julia syntax highlighting and unicode support.
 Plug 'https://github.com/JuliaEditorSupport/julia-vim'
 
 " Include conquer of completion (coc) for code completion.
 " CocInstall coc-json coc-html coc-css coc-tsserver coc-python coc-julia
-Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
+
+" Include treesitter for intelligent syntax and code highlighting.
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter' ", {'do': ':TSUpdate'}
 
 set encoding=UTF-8
 
@@ -182,3 +188,17 @@ map <C-o> :NERDTreeToggle<CR>
 " Always use 'LatexToUnicode' (julia-vim); this the allows '\' unicode command.
 let g:latex_to_unicode_file_types = ".*"
 
+" Enable and setup Everforest color scheme.
+if has('termguicolors')
+    set termguicolors
+endif
+
+set background=dark
+
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+
+colorscheme everforest
+
+" Set the colorscheme for lightline to be Everforest.
+let g:lightline = {'colorscheme' : 'everforest'}
